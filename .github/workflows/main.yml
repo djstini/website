@@ -15,4 +15,4 @@ jobs:
         username: dennisaxt
         password: ${{ secrets.ftp_password }}
         protocol: ftps
-        port: 22
+        port: 21
