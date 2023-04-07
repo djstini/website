@@ -76,12 +76,16 @@ h2 {
 		transform: rotate3d(0);
 	}
 
-	25% {
+	20% {
 		transform: rotate3d(0, 1, 0, 20deg);
 	}
 
 	50% {
 		transform: rotate3d(0, 1, 0, 90deg);
+	}
+
+	80% {
+		transform: rotate3d(0, 1, 0, 20deg);
 	}
 
 	100% {
