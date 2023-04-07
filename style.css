@@ -1,0 +1,95 @@
+html {
+	width: 100%;
+	height: 100%;
+	display: flex;
+	justify-content: center;
+	background: var(--color3);
+	--color1: #afeefb;
+	--color2: #EEFBAF;
+	--color4: #FBAFEE;
+	--color3: #0F0445;
+	--colorBorder: #0CD13A;
+	--colorBackground: #534599;
+	--borderRadius: 10px;
+}
+
+body {
+	padding-top: 10em;
+	margin: 0;
+	width: 75%;
+	display: flex;
+	flex-direction: column;
+}
+
+footer {
+	padding: 1em;
+	margin-top: auto;
+	background: var(--colorBackground);
+	color: #afeefb;
+	border-top: solid 4px var(--colorBorder);
+	border-left: solid 4px var(--colorBorder);
+	border-right: solid 4px var(--colorBorder);
+	border-radius: var(--borderRadius) var(--borderRadius) 0 0;
+	filter: drop-shadow(0 0 0.75rem var(--colorBorder));
+}
+
+
+h2 {
+	color: var(--color4);
+	margin-top: 0;
+}
+
+
+#entry {
+	width: 30em;
+	align-self: center;
+	padding: 3em;
+	background: var(--color2);
+	border: 4px solid var(--colorBorder);
+	border-radius: 50%;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-direction: column;
+	animation-name: example;
+	animation-duration: 15s;
+	animation-iteration-count: infinite;
+	filter: drop-shadow(0 0 0.75rem var(--colorBorder));
+}
+
+.text_block {
+	margin-top: 2em;
+	padding: 1em;
+	background: var(--colorBackground);
+	border: 4px solid var(--colorBorder);
+	border-radius: var(--borderRadius);
+	color: var(--color1);
+	filter: drop-shadow(0 0 0.75rem var(--colorBorder));
+}
+
+.block_spam {
+	display: none;
+}
+
+@keyframes example {
+	0% {
+		transform: rotate3d(0);
+	}
+
+	25% {
+		transform: rotate3d(0, 1, 0, 20deg);
+	}
+
+	50% {
+		transform: rotate3d(0, 1, 0, 90deg);
+	}
+
+	100% {
+		transform: rotate3d(0);
+	}
+}
+
+#entry h1,
+#entry p {
+	margin: 0;
+}
