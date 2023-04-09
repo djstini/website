@@ -1,0 +1,9 @@
+html {
+	--colorText: #000000;
+	--colorAccent: #ff00d4;
+	--colorHtmlBackdrop: #383838;
+	--colorBorder: #000000;
+	--colorBackground: #ffffff;
+	--borderRadius: 10px;
+	--shadowBorder: .75rem;
+}
