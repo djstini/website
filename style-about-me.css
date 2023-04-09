@@ -5,5 +5,5 @@ html {
 	--colorBorder: #220042;
 	--colorBackground: #541bbd8a;
 	--borderRadius: 10px;
-	--shadowBorder: 0rem;
+	--shadowBorder: .5rem;
 }

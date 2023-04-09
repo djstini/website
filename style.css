@@ -102,4 +102,14 @@ h2 {
 	background-color: var(--colorAccent);
 	color: var(--colorText);
 	text-decoration: none;
+	transition: all .3s;
+}
+
+.nav-button:hover {
+	transform: scale(1.25, 1.25);
+	-moz-transform: scale(1.25, 1.25);
+	-ms-transform: scale(1.25, 1.25);
+	-webkit-transform: scale(1.25, 1.25);
+	-o-transform: scale(1.25, 1.25);
+	filter: drop-shadow(0 0 calc(var(--shadowBorder) * 1.5) var(--colorBorder));
 }
