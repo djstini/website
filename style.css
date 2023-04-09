@@ -3,7 +3,7 @@ html {
 	height: 100%;
 	display: flex;
 	justify-content: center;
-	background: var(--colorHtmlBackdrop);
+
 }
 
 body {
@@ -16,7 +16,7 @@ body {
 
 footer {
 	padding: 1em;
-	margin-top: auto;
+	margin-top: auto !important;
 	background: var(--colorBackground);
 	color: vat(--colorText);
 	border-bottom: none !important;
@@ -28,11 +28,7 @@ footer {
 	width: 30em;
 	align-self: center;
 	padding: 3em;
-	background:
-		radial-gradient(circle at 50% 50%,
-			var(--colorBackground),
-			var(--colorBorder)),
-		url(media/noise.svg);
+	background: var(--colorBackground);
 	border-radius: 50% !important;
 	display: flex;
 	justify-content: center;

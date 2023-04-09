@@ -1,9 +1,24 @@
 html {
 	--colorText: #f5f5f5f1;
 	--colorAccent: #ecb709e1;
-	--colorHtmlBackdrop: #25049bb4;
-	--colorBorder: #220042;
-	--colorBackground: #541bbd8a;
+	--colorHtmlBackdrop: #2100998e;
+	--colorBorder: #4e0592;
+	--colorBackground: #5218bed0;
 	--borderRadius: 10px;
 	--shadowBorder: .5rem;
+}
+
+html:before {
+	content: "";
+	top: 0;
+	bottom: 0;
+	right: 0;
+	left: 0;
+	position: absolute;
+	background:
+		radial-gradient(farthest-corner at 50% 15%,
+			var(--colorBackground),
+			var(--colorHtmlBackdrop)),
+		url(media/noise.svg);
+	filter: contrast(250%) brightness(500%);
 }
