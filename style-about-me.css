@@ -6,10 +6,10 @@ html {
 	--colorBackground: #5218bed0;
 	--borderRadius: 10px;
 	--shadowBorder: .5rem;
-	overflow: hidden !important;
+	position: fixed;
 }
 
-html:before {
+html::before {
 	content: "";
 	top: -225%;
 	bottom: 0%;
@@ -26,7 +26,6 @@ html:before {
 	filter: contrast(250%) brightness(500%);
 	transform-origin: 50% 50%;
 	animation: spinBackground 10s linear infinite;
-
 }
 
 @keyframes spinBackground {
