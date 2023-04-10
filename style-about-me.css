@@ -11,12 +11,12 @@ html {
 
 html::before {
 	content: "";
-	top: -225%;
+	top: calc(-2500px + 15vh);
 	bottom: 0%;
 	right: 0%;
-	left: -200%;
-	width: 500%;
-	height: 500%;
+	left: calc(-2500px + 50vw);
+	width: 5000px;
+	height: 5000px;
 	position: absolute;
 	background:
 		radial-gradient(farthest-corner at 50% 50%,
