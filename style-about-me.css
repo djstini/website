@@ -23,7 +23,7 @@ html::before {
 			var(--colorBackground),
 			var(--colorHtmlBackdrop)),
 		url(media/noise.svg);
-	filter: contrast(250%) brightness(500%);
+	filter: contrast(250%) brightness(600%);
 	transform-origin: 50% 50%;
 	animation: spinBackground 10s linear infinite;
 }
