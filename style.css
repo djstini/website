@@ -1,8 +1,15 @@
+@font-face {
+  font-family: "Dotfont";
+  src: url("media/dotfont.ttf");
+}
+
 html {
   width: 100%;
   height: 100%;
   display: flex;
   justify-content: center;
+  font-family: "Dotfont", Impact, Haettenschweiler, "Arial Narrow Bold",
+    sans-serif;
 }
 
 body {
