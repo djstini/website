@@ -1,22 +1,20 @@
 html {
-	--colorText: #000000;
-	--colorAccent: #ff00d4;
-	--colorHtmlBackdrop: #3b3b3b25;
-	--colorBorder: #000000;
-	--colorBackground: #ffffff;
-	--borderRadius: 10px;
-	--shadowBorder: .75rem;
+  --colorText: #000000;
+  --colorAccent: #ff00d4;
+  --colorHtmlBackdrop: #3b3b3b25;
+  --colorBorder: #000000;
+  --colorBackground: #ffffff;
+  --borderRadius: 10px;
+  --shadowBorder: 0.75rem;
 }
 
 html:before {
-	content: "";
-	top: 0;
-	bottom: 0;
-	right: 0;
-	left: 0;
-	height: 100%;
-	position: absolute;
-	background-image: url(media/warp.gif);
-	background-size: contain;
-	filter: grayscale();
+  content: "";
+  top: 0;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  height: 100%;
+  position: absolute;
+  background-color: var(--colorHtmlBackdrop);
 }
