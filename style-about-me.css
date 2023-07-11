@@ -1,47 +1,59 @@
 html {
-	--colorText: #f5f5f5f1;
-	--colorAccent: #ecb709e1;
-	--colorHtmlBackdrop: #2100998e;
-	--colorBorder: #4e0592;
-	--colorBackground: #5218bed0;
-	--borderRadius: 10px;
-	--shadowBorder: .5rem;
-	position: fixed;
+  --colorText: #f5f5f5f1;
+  --colorAccent: #ecb709e1;
+  --colorHtmlBackdrop: #2100998e;
+  --colorBorder: #4e0592;
+  --colorBackground: #5218bed0;
+  --borderRadius: 10px;
+  --shadowBorder: 0.5rem;
+  position: fixed;
 }
 
 html::before {
-	content: "";
-	top: calc(-2500px + 15vh);
-	bottom: 0%;
-	right: 0%;
-	left: calc(-2500px + 50vw);
-	width: 5000px;
-	height: 5000px;
-	position: absolute;
-	background:
-		radial-gradient(farthest-corner at 50% 50%,
-			var(--colorBackground),
-			var(--colorHtmlBackdrop)),
-		url(media/noise.svg);
-	filter: contrast(250%) brightness(600%);
-	transform-origin: 50% 50%;
-	animation: spinBackground 10s linear infinite;
+  content: "";
+  top: calc(-2500px + 15vh);
+  bottom: 0%;
+  right: 0%;
+  left: calc(-2500px + 50vw);
+  width: 5000px;
+  height: 5000px;
+  position: absolute;
+  background: radial-gradient(
+      farthest-corner at 50% 50%,
+      var(--colorBackground),
+      var(--colorHtmlBackdrop)
+    ),
+    url(media/noise.svg);
+  filter: contrast(250%) brightness(600%);
+  transform-origin: 50% 50%;
+  animation: spinBackground 10s linear infinite;
 }
 
 @keyframes spinBackground {
-	from {
-		-ms-transform: rotate(0deg);
-		-moz-transform: rotate(0deg);
-		-webkit-transform: rotate(0deg);
-		-o-transform: rotate(0deg);
-		transform: rotate(0deg);
-	}
+  from {
+    -ms-transform: rotate(0deg);
+    -moz-transform: rotate(0deg);
+    -webkit-transform: rotate(0deg);
+    -o-transform: rotate(0deg);
+    transform: rotate(0deg);
+  }
 
-	to {
-		-ms-transform: rotate(360deg);
-		-moz-transform: rotate(360deg);
-		-webkit-transform: rotate(360deg);
-		-o-transform: rotate(360deg);
-		transform: rotate(360deg);
-	}
+  to {
+    -ms-transform: rotate(360deg);
+    -moz-transform: rotate(360deg);
+    -webkit-transform: rotate(360deg);
+    -o-transform: rotate(360deg);
+    transform: rotate(360deg);
+  }
+}
+
+th,
+td {
+  padding: 0.5em;
+  border: 1px solid var(--colorAccent);
+}
+table {
+  margin-top: 1em;
+  width: 100%;
+  border-collapse: collapse;
 }
