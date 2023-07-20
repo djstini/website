@@ -1,18 +1,14 @@
 <?php
-require_once '../.config.php';
+require_once '.config.php';
 
-$pwortcontrol = $_GET['pass'];
-$ip           = $_GET['meineip'];
-$fw           = $_GET['FW'];
+$pwortcontrol = $_GET['password'];
+$ip           = $_GET['ip'];
+$fw           = $_GET['fw'];
 if ( file_exists( $dyn_dns_txt ) ) {
 	if ( $pwortcontrol == $dyn_dns_password ) {
-		$a = fopen( "$dyn_dns_txt", 'w' );
-		fwrite( $a, $ip );
-		fclose( $a );
+		file_put_contents( $dyn_dns_txt, $ip );
 	} else {
-		$a     = fopen( "$dyn_dns_txt", 'r+' );
-		$dynip = fread( $a, filesize( $dyn_dns_txt ) );
-		fclose( $a );
+		$dynip = file_get_contents( $dyn_dns_txt );
 		if ( $fw == 1 ) {
 			$url = 'https://' . $dynip;
 		} else {
