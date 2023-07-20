@@ -1,5 +1,6 @@
 <?php
 require_once '../.config.php';
+
 $pwortcontrol = $_GET['pass'];
 $ip           = $_GET['meineip'];
 $fw           = $_GET['FW'];
