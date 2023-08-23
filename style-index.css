@@ -6,6 +6,7 @@ html {
   --colorBackground: #ffffff;
   --borderRadius: 10px;
   --shadowBorder: 0.75rem;
+  --shadowColor: grey;
 }
 
 html:before {
