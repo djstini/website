@@ -132,6 +132,7 @@ h2 {
   color: var(--colorText);
   text-decoration: none;
   transition: all 0.3s;
+  box-shadow: 5 5 var(--shadowColor);
 }
 
 .nav-button:hover {
