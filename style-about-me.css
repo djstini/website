@@ -6,7 +6,7 @@ html {
   --colorBackground: #5218bed0;
   --borderRadius: 10px;
   --shadowBorder: 0.5rem;
-    --shadowColor: grey;
+    --shadowColor: #ecb709e1;
   position: fixed;
 }
 
