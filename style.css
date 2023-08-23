@@ -68,7 +68,7 @@ footer {
     box-shadow: 10px 10px var(--shadowColor);
   }
   50% {
-    box-shadow: -10px 10px var(--shadowColor);
+    box-shadow: -10px 5px var(--shadowColor);
   }
   100% {
     -ms-transform: rotate3d(0, 1, 0, 360deg);
