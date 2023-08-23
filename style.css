@@ -66,11 +66,9 @@ footer {
     transform: rotate3d(0, 1, 0, 0deg);
     box-shadow: 10px 10px var(--shadowColor);
   }
-
   50% {
     box-shadow: -10px 10px var(--shadowColor);
   }
-
   100% {
     -ms-transform: rotate3d(0, 1, 0, 360deg);
     -moz-transform: rotate3d(0, 1, 0, 360deg);
@@ -141,5 +139,5 @@ h2 {
   -ms-transform: scale(0.75, 0.75);
   -webkit-transform: scale(0.75, 0.75);
   -o-transform: scale(0.75, 0.75);
-  filter: drop-shadow(0 0 0 var(--colorBorder));
+  box-shadow: 0 0 var(--shadowColor);
 }
