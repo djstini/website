@@ -96,7 +96,7 @@ h2 {
   background: var(--colorBackground);
   border: 4px solid var(--colorBorder);
   border-radius: var(--borderRadius);
-  box-shadow: 10px 10px var(--shadowBorder);
+  box-shadow: 10px 10px var(--shadowColor);
 }
 
 .buttons {
