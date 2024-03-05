@@ -8,7 +8,7 @@
  */
 class Interface_Nonagon_Dev extends Subdomain_Handler{
     public static function factory($value_ipv4, $value_ipv6){
-        if(!defined(DNS_AUTH_API_TOKEN) || !defined(DNS_ZONE_ID_INTERFACE_NONAGON_DEV)){
+        if(! defined( 'DNS_AUTH_API_TOKEN' ) || ! defined( 'DNS_ZONE_ID_INTERFACE_NONAGON_DEV' )){
             return false;
         }
         $auth_api_token = DNS_AUTH_API_TOKEN;
