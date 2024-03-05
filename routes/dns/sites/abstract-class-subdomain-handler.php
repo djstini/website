@@ -126,10 +126,11 @@ abstract class Subdomain_Handler{
         die('Error: "' . curl_error($ch) . '" - Code: ' . curl_errno($ch));
         }
 
-        echo 'HTTP Status Code: ' . curl_getinfo($ch, CURLINFO_HTTP_CODE) . PHP_EOL;
-        echo 'Response Body: ' . $response . PHP_EOL;
-
         // close curl resource to free up system resources 
         curl_close($ch);
+
+        if(200 === curl_getinfo(curl_getinfo($ch, CURLINFO_HTTP_CODE))){
+            print_r(json_decode($response));
+        }
     }
 }
