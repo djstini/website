@@ -53,7 +53,7 @@ abstract class Subdomain_Handler{
         $this->existing_records = $existing_records;
     }
 
-    private function update_record($record, $new_record_value){
+    protected function update_record($record, $new_record_value){
         // get cURL resource
         $ch = curl_init();
 
@@ -149,7 +149,7 @@ abstract class Subdomain_Handler{
      *  - created
      *  - modified
      */
-    private function get_record($record_name, $record_type){
+    protected function get_record($record_name, $record_type){
         foreach( $this->existing_records as $record ){
             if( $record->name === $record_name && $record->type === $record_type ){
                 return $record;
