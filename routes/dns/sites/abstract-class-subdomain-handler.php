@@ -35,23 +35,33 @@ abstract class Subdomain_Handler{
      */
     private string $value_ipv6;
 
+    /**
+     * Existing Records Array
+     */
+    private array $existing_records;
+
     public function __construct($auth_api_token, $zone_id, $value_ipv4, $value_ipv6){
         $this->auth_api_token = $auth_api_token;
         $this->zone_id = $zone_id;
         $this->$value_ipv4 = $value_ipv4;
         $this->$value_ipv6 = $value_ipv6;
 
-        $records = $this->get_all_records();
+        $existing_records = $this->get_all_records();
+        if( false === $existing_records ){
+            echo "ERROR GETTING EXISTING ZONEFILE ENTRIES";
+            die;
+        }
+        $this->existing_records = $existing_records;
     }
 
     public function update_records(){
-        // $this->update_record('www', 'A', $this->value_ipv4);
-        // $this->update_record('@', 'A', $this->value_ipv4);
-        // $this->update_record('www', 'AAAA', $this->value_ipv6);
-        // $this->update_record('@', 'AAAA', $this->value_ipv6);
+        $this->update_record($this->get_record('www', 'A'), $this->value_ipv4);
+        $this->update_record($this->get_record('@', 'A'), $this->value_ipv4);
+        $this->update_record($this->get_record('www', 'AAAA'), $this->value_ipv6);
+        $this->update_record($this->get_record('@', 'AAAA'), $this->value_ipv6);
     }
 
-    private function update_record($record_id, $record_name, $record_type, $record_value){
+    private function update_record($record, $new_record_value){
         // get cURL resource
         $ch = curl_init();
 
@@ -72,10 +82,10 @@ abstract class Subdomain_Handler{
 
         // json body
         $json_array = [
-        'value' => $record_value,
+        'value' => $new_record_value,
         'ttl' => $this->ttl,
-        'type' => $record_type,
-        'name' => $record_name,
+        'type' => $record->type,
+        'name' => $record->name,
         'zone_id' => $this->zone_id,
         ]; 
         $body = json_encode($json_array);
@@ -126,11 +136,32 @@ abstract class Subdomain_Handler{
         die('Error: "' . curl_error($ch) . '" - Code: ' . curl_errno($ch));
         }
 
-        // close curl resource to free up system resources 
-        curl_close($ch);
+        // check if response is successful.
+        if( 200 == curl_getinfo($ch, CURLINFO_HTTP_CODE)){
+            // close curl resource to free up system resources 
+            curl_close($ch);
+            return json_decode($response)->records;
+        }
 
-        if(200 === curl_getinfo(curl_getinfo($ch, CURLINFO_HTTP_CODE))){
-            print_r(json_decode($response));
+        return false;
+    }
+
+    /**
+     * Returns record objects by name and type.
+     * A Record Object contains the following attributes:
+     *  - id
+     *  - type
+     *  - name
+     *  - value
+     *  - zone_id
+     *  - created
+     *  - modified
+     */
+    private function get_record($record_name, $record_type){
+        foreach( $this->existing_records as $record ){
+            if( $record->name === $record_name && $record->type === $record_type ){
+                return $record;
+            }
         }
     }
 }
