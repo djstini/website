@@ -28,12 +28,12 @@ abstract class Subdomain_Handler{
     /**
      * The DNS Record VALUE
      */
-    private string $value_ipv4;
+    protected string $value_ipv4;
     
     /**
      * The DNS Record VALUE
      */
-    private string $value_ipv6;
+    protected string $value_ipv6;
 
     /**
      * Existing Records Array
