@@ -48,8 +48,7 @@ abstract class Subdomain_Handler{
 
         $existing_records = $this->get_all_records();
         if( false === $existing_records ){
-            echo "ERROR GETTING EXISTING ZONEFILE ENTRIES";
-            die;
+            die("ERROR GETTING EXISTING ZONEFILE ENTRIES");
         }
         $this->existing_records = $existing_records;
     }
@@ -66,7 +65,7 @@ abstract class Subdomain_Handler{
         $ch = curl_init();
 
         // set url
-        curl_setopt($ch, CURLOPT_URL, 'https://dns.hetzner.com/api/v1/records/' . $record_id);
+        curl_setopt($ch, CURLOPT_URL, 'https://dns.hetzner.com/api/v1/records/' . $record->id);
 
         // set method
         curl_setopt($ch, CURLOPT_CUSTOMREQUEST, 'PUT');
