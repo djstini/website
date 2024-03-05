@@ -43,8 +43,8 @@ abstract class Subdomain_Handler{
     public function __construct($auth_api_token, $zone_id, $value_ipv4, $value_ipv6){
         $this->auth_api_token = $auth_api_token;
         $this->zone_id = $zone_id;
-        $this->$value_ipv4 = $value_ipv4;
-        $this->$value_ipv6 = $value_ipv6;
+        $this->value_ipv4 = $value_ipv4;
+        $this->value_ipv6 = $value_ipv6;
 
         $existing_records = $this->get_all_records();
         if( false === $existing_records ){

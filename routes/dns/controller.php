@@ -11,6 +11,7 @@
 
 $interface_nonagon_dev = Interface_Nonagon_Dev::factory('123', '123');
 if ( false !== $interface_nonagon_dev ){
-   echo $interface_nonagon_dev; 
+   $interface_nonagon_dev->update_records(); 
+} else {
+   echo "lol";
 }
-$interface_nonagon_dev->update_records();
