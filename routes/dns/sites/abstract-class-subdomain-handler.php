@@ -53,13 +53,6 @@ abstract class Subdomain_Handler{
         $this->existing_records = $existing_records;
     }
 
-    public function update_records(){
-        $this->update_record($this->get_record('www', 'A'), $this->value_ipv4);
-        $this->update_record($this->get_record('@', 'A'), $this->value_ipv4);
-        $this->update_record($this->get_record('www', 'AAAA'), $this->value_ipv6);
-        $this->update_record($this->get_record('@', 'AAAA'), $this->value_ipv6);
-    }
-
     private function update_record($record, $new_record_value){
         // get cURL resource
         $ch = curl_init();

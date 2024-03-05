@@ -15,4 +15,9 @@ class Interface_Nonagon_Dev extends Subdomain_Handler{
         $zone_id = DNS_ZONE_ID_INTERFACE_NONAGON_DEV;
         return new Interface_Nonagon_Dev($auth_api_token, $zone_id, $value_ipv4, $value_ipv6);
     }
+
+    public function update_records(){
+        $this->update_record($this->get_record('interface', 'A'), $this->value_ipv4);
+        $this->update_record($this->get_record('interface', 'AAAA'), $this->value_ipv6);
+    }
 }
