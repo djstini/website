@@ -1,11 +1,12 @@
-on: push
 name: Deploy website on push
+on: push
+
 jobs:
   deploy:
     runs-on: ubuntu-latest
     steps:
-    - name: Get latest code
     - uses: actions/checkout@v4
+    - name: Get latest code
       uses: burnett01/rsync-deployments@7.0.1
       with:
         switches: -avr --exclude '.codeclimate.yml' --exclude 'README.md' --exclude '.gitlab' --exclude '.gitignore' --exclude '.git'
